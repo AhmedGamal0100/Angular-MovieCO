@@ -1,0 +1,73 @@
+<div class="vertiacal-nav">
+    <p-drawer #drawerRef [(visible)]="visible" (onHide)="navToggle.setVisibility()"
+        [position]='navToggle.getPosition()? "right": "left"'>
+        <ng-template #headless>
+            <div class="flex flex-column h-full">
+                <div class="flex justify-content-between align-items-center px-5 py-3 border-300 border-bottom-1">
+                    <span class="flex align-items-baseline gap-1">
+                        <span class="font-semibold text-5xl">Movie</span>
+                        <span class="font-semibold text-2xl vertical-nav__contrast-span px-2 border-round-md">CO.</span>
+                    </span>
+                    <span>
+                        <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" rounded="true"
+                            outlined="true"></p-button>
+                    </span>
+                </div>
+                <div class="overflow-y-auto flex flex-column gap-2">
+                    <div class="pt-3 px-5">
+                        <h3 class="text-2xl">General</h3>
+                        <ul class="list-none py-2 px-4 m-0">
+                            <li><a routerLink="/" class="text-xl">Home</a></li>
+                            <li><a routerLink="/home/wishlist" class="text-xl" (click)="isUserLogged()">Wish List</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-3 px-5">
+                        <h3 class="text-2xl">Movies</h3>
+                        <ul class="list-none py-2 px-4  flex flex-column gap-1">
+                            <li><a routerLink="/home/playing" class="text-xl">Now Playing</a> </li>
+                            <li><a routerLink="/home/popular" class="text-xl">Popular Movies </a></li>
+                            <li><a routerLink="/home/coming" class="text-xl">Up Coming </a></li>
+                        </ul>
+                    </div>
+                    <div class="pt-3 px-5">
+                        <h3 class="text-2xl">TV Shows</h3>
+                        <ul class="list-none py-2 px-4 m-0">
+                            <li><a routerLink="/home/tv-trend" class="text-xl">Trending</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-auto border-300 border-top-1">
+                    @if (isLogged()) {
+                    <div class="flex align-items-center px-4 py-3 gap-5 justify-content-between">
+                        <div>
+                            <p-avatar [image]="loggedAccount()?.picture" shape="circle" size="large"
+                                class=" border-3" />
+                        </div>
+                        <div class="flex flex-column gap-1">
+                            <div class="font-bold text-l py-2 px-3 surface-50 border-round-md vertical-nav__profile">
+                                {{loggedAccountName()}}</div>
+                        </div>
+                        <p-button type="button" icon="pi pi-sign-out" rounded="true" outlined="true"
+                            (onClick)="logOut()"></p-button>
+                    </div>
+                    } @else {
+                    <div class="flex align-items-center px-5 py-3 gap-1 justify-content-between">
+                        <div class="w-5">
+                            <p-button type="button" (click)="login()" [label]="'Login'" outlined="true" [size]="'large'"
+                                [styleClass]="'w-full'"></p-button>
+                        </div>
+                        <div class="w-5">
+                            <p-button type="button" (click)="register()" [label]="'Register'" outlined="true"
+                                [size]="'large'" [styleClass]="'w-full'"></p-button>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </ng-template>
+    </p-drawer>
+    <div class="card flex justify-center gap-2 text-2xl toast">
+        <p-toast />
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="search">
+    <div class="search__container">
+        <div class="search__filters border-300 border-bottom-1">
+            <app-movies-header-page></app-movies-header-page>
+        </div>
+
+        <div class="search__results">
+            <div class="search_cards">
+                @for (res of searchResults(); track res.id) {
+                @if (res.poster_path) {
+                <div class="search__card">
+                    <app-search-card [searchObj]="res"></app-search-card>
+                </div>
+                }
+                }
+                @empty {
+                <div class="search__no-results">
+                    <h2>No Results Found</h2>
+                    <p>We couldn’t find anything matching “{{ query() }}”.</p>
+                    <button class="search__try-again" (click)="clearSearch()">
+                        <i class="pi pi-refresh"></i> Try a New Search
+                    </button>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="flex items-center justify-content-center my-2">
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first()" [rows]="rows"
+            [totalRecords]="totalResults()" [showFirstLastIcon]="false" [showCurrentPageReport]="false"
+            [showJumpToPageInput]="true"></p-paginator>
+    </div>
+</div>

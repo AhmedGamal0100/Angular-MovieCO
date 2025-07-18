@@ -1,0 +1,24 @@
+<div class="show__container flex flex-column">
+    <div class="show__header border-300 border-bottom-1">
+        <h2>Trending TV Shows!</h2>
+    </div>
+    <div class="flex w-full flex-wrap justify-content-center ">
+        @for (show of tvCardObjs(); track show.id) {
+        @if (!show.adult || undefined || null ) {
+        @if(show.poster_path){
+        <div class="show__card">
+            <button (click)="routeToDetails(show)">
+                <!-- <app-filter-card [tvCardObjs]='show'></app-filter-card> -->
+                <app-filter-tv-card [showObj]='show'></app-filter-tv-card>
+            </button>
+        </div>
+        }
+        } }
+    </div>
+</div>
+
+<div class="flex items-center justify-content-center  my-2">
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first3" [rows]="rows3" [totalRecords]="totalRecords()"
+        [showFirstLastIcon]="false" [showCurrentPageReport]="false" [showJumpToPageInput]="true">
+    </p-paginator>
+</div>

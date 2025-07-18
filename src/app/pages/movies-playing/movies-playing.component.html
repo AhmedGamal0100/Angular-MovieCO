@@ -1,0 +1,24 @@
+<div class="playing__container flex flex-column">
+    <div class="playing__header border-300 border-bottom-1">
+        <h2>Movies Now Playing!</h2>
+    </div>
+    <div class="flex w-full flex-wrap justify-content-center ">
+        @for (movie of movieCardObjs(); track movie.id) {
+        @if (!movie.adult || undefined || null) {
+        @if(movie.poster_path){
+        <div class="playing__card">
+            <button (click)="routeToDetails(movie)">
+                <app-filter-card [movieCardObj]='movie'></app-filter-card>
+            </button>
+        </div>
+        }
+        }
+        }
+    </div>
+</div>
+
+<div class="flex items-center justify-content-center  my-2">
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first3" [rows]="rows3" [totalRecords]="totalRecords()"
+        [showFirstLastIcon]="false" [showCurrentPageReport]="false" [showJumpToPageInput]="true">
+    </p-paginator>
+</div>

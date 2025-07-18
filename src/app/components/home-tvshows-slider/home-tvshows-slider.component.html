@@ -1,0 +1,19 @@
+<section class="tvshows-slider">
+    <section class="tvshows__container">
+        <div class="tvshows__title">
+            <a routerLink="/home/tv-trend">
+                <h2>TV Shows</h2>
+            </a>
+        </div>
+        <p-carousel [value]="showCardObjs()" [numVisible]="6" [numScroll]="1" [showIndicators]="false" [circular]="false"
+      [responsiveOptions]="responsiveOptions">
+            <ng-template pTemplate="item" let-show>
+                <button (click)="routeToDetails(show)">
+                    <div>
+                        <app-home-tv-card [showCardObj]="show"></app-home-tv-card>
+                    </div>
+                </button>
+            </ng-template>
+        </p-carousel>
+    </section>
+</section>

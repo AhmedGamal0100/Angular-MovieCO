@@ -1,0 +1,22 @@
+<div class="show">
+  <div class="show__thumbnail">
+    <img [src]="showCardThumbnailImg()" alt="thumbnail image">
+  </div>
+
+  <div class="show__knob">
+    @if (showCardAveragePopularity() < 30) { <p-knob [(ngModel)]="showCardAveragePopularity" [size]="60"
+      [strokeWidth]="8" class="show__level-red" [disabled]="true"></p-knob>
+      } @else if (showCardAveragePopularity() < 70) { <p-knob [(ngModel)]="showCardAveragePopularity" [size]="60"
+        [strokeWidth]="8" class="show__level-yellow" [disabled]="true"></p-knob>
+        } @else {
+        <p-knob [(ngModel)]="showCardAveragePopularity" [size]="60" [strokeWidth]="8" class="show__level-emerald"
+          [disabled]="true"></p-knob>
+        }
+  </div>
+  <div class="show__content">
+    <h4>
+      {{ showCardTitle() }}
+    </h4>
+    <p>{{ showCardDate() }}</p>
+  </div>
+</div>

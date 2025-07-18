@@ -1,0 +1,91 @@
+:host {
+    .horizontal-nav {
+        padding-block: 1rem;
+
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: auto;
+            padding-inline: 1rem;
+
+            @media (max-width: 768px) {
+                gap: 0.8rem;
+                flex-wrap: wrap;
+
+            }
+
+            @media (max-width: 640px) {
+                align-items: stretch;
+                order: 1;
+            }
+
+            span {
+                font-size: 2.5rem;
+                font-weight: bolder;
+                color: var(--p-zinc-800);
+
+                html.my-add-dark & {
+                    color: var(--p-surface-100);
+                }
+            }
+        }
+
+        &__btns {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            @media (max-width: 640px) {
+                width: 50%;
+                order: 1;
+            }
+        }
+
+        &__notification {
+            position: relative;
+
+            .horizontal-nav__badge {
+                position: absolute;
+                top: -0.5rem;
+                right: -0.5rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
+                background-color: var(--p-red-500);
+            }
+        }
+
+        &__lang {
+            &:hover {
+                background-color: var(--p-zinc-200);
+                border-radius: 0.25rem;
+                color: var(--p-zinc-900);
+            }
+        }
+
+        &__search {
+            width: 50%;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                order: 3;
+            }
+        }
+    }
+
+    .horizontal-nav__notification {
+        span {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .horizontal-nav__btns {
+        gap: 0.4rem !important;
+        width: fit-content !important;
+    }
+}

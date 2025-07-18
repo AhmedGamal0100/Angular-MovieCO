@@ -1,0 +1,29 @@
+<div class="wish-card">
+  <div class="wish-card__poster">
+    <img [src]="getPosterUrl()" [alt]="showWishObj()?.name" />
+    <div class="wish-card__overlay">
+      <div class="wish-card__overlay-content">
+        <h2 class="wish-card__title">{{ showWishObj()?.name }}</h2>
+        @if(showWishObj()?.tagline) {
+          <p class="wish-card__tagline">“{{ showWishObj()?.tagline }}”</p>
+        }
+        <div class="wish-card__meta">
+          <span>{{ showWishObj()?.number_of_seasons }} Seasons</span>
+          <span>{{ showWishObj()?.number_of_episodes }} Episodes</span>
+          <span>Status: {{ showWishObj()?.status }}</span>
+        </div>
+        <p class="wish-card__overview">
+          {{ showWishObj()?.overview }}
+        </p>
+      </div>
+      <div class="wish-card__footer">
+        <div class="wish-card__rating">
+          ⭐ {{ showWishObj()?.vote_average }}/10
+        </div>
+        <button class="wish-card__details-btn" (click)="viewDetails()">
+          <i class="pi pi-play"></i> View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

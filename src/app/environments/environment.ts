@@ -1,0 +1,4 @@
+export const environment = {
+    production: false,
+    TMDB_API_TOKEN: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMGY1M2U0NDhhY2E3MmYwMTc4YTQyNjY4YmUyYzQ2ZCIsIm5iZiI6MTc1MTEzNTE5My41MTgwMDAxLCJzdWIiOiI2ODYwMzNkOTYxZTAxMGU4MmJhNGQxNTgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.IQW-E7iwCzCBZYc5E82z9kagx9-Ul5IbTJADnRfYdy0"
+};

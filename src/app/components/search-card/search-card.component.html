@@ -1,0 +1,30 @@
+<div class="search-card">
+  <div class="search-card__poster">
+    <img [src]="getPosterUrl()" [alt]="searchObj()?.title" />
+
+    <div class="search-card__overlay">
+      <div class="search-card__overlay-content">
+        <h2 class="search-card__title">{{ searchObj()?.title }}</h2>
+
+        <div class="search-card__meta">
+          <span><b>Release:</b> {{ searchObj()?.release_date }}</span><br />
+        </div>
+
+        <p class="search-card__overview">
+          {{ searchObj()?.overview }}
+        </p>
+
+        <div class="search-card__footer">
+          <div class="search-card__rating">
+            ⭐ {{ searchObj()?.vote_average }}/10
+          </div>
+          <div class="search-card__btns">
+            <button class="search-card__details-btn" (click)="viewMovieDetails()">
+              <i class="pi pi-info-circle"></i> View Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

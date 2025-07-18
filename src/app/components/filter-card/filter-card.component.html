@@ -1,0 +1,22 @@
+<div class="home-card">
+  <div class="home-card__thumbnail">
+    <img [src]="movieCardThumbnailImg()" alt="thumbnail image">
+  </div>
+
+  <div class="home-card__knob">
+    @if (movieCardAveragePopularity() < 30) { <p-knob [(ngModel)]="movieCardAveragePopularity" [size]="60"
+      [strokeWidth]="8" class="home-card__level-red" [disabled]="true"></p-knob>
+      } @else if (movieCardAveragePopularity() < 70) { <p-knob [(ngModel)]="movieCardAveragePopularity" [size]="60"
+        [strokeWidth]="8" class="home-card__level-yellow" [disabled]="true"></p-knob>
+        } @else {
+        <p-knob [(ngModel)]="movieCardAveragePopularity" [size]="60" [strokeWidth]="8" class="home-card__level-emerald"
+          [disabled]="true"></p-knob>
+        }
+  </div>
+  <div class="home-card__content">
+    <h4>
+      {{ movieCardTitle() }}
+    </h4>
+    <p>{{ movieCardDate() }}</p>
+  </div>
+</div>

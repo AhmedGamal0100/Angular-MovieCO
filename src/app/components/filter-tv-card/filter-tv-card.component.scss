@@ -1,0 +1,121 @@
+:host {
+  .show {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--p-surface-50);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    scale: 0.98;
+    cursor: pointer;
+
+    html.my-add-dark & {
+      background-color: var(--p-surface-100);
+    }
+
+    &:hover {
+      scale: 1;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.6); /* add dim effect on hover */
+
+      .show__content h4 {
+        transform: scale(1.05);
+        color: var(--p-primary-100); /* accent color on hover */
+      }
+    }
+
+    &__thumbnail {
+      height: 100%;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+    }
+
+    &__knob {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 2;
+
+      ::ng-deep .p-knob {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+        .p-knob-text {
+          fill: #fff;
+          font-weight: 900;
+          font-size: 1.5rem;
+        }
+
+        .p-knob-range {
+          stroke: var(--p-surface-200);
+        }
+      }
+    }
+
+    &__level-emerald {
+      ::ng-deep .p-knob .p-knob-value {
+        stroke: var(--p-emerald-500);
+      }
+    }
+
+    &__level-yellow {
+      ::ng-deep .p-knob .p-knob-value {
+        stroke: var(--p-yellow-500);
+      }
+    }
+
+    &__level-red {
+      ::ng-deep .p-knob .p-knob-value {
+        stroke: var(--p-red-500);
+      }
+    }
+
+    &__content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0.4rem;
+      height: 150px;
+
+      h4 {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        transition: transform 0.3s ease, color 0.3s ease;
+        color: #fff;
+
+        html.my-add-dark & {
+          color: var(--p-surface-50);
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+        color: #ddd;
+
+        html.my-add-dark & {
+          color: var(--p-surface-300);
+        }
+      }
+    }
+  }
+}

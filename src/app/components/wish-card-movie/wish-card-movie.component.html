@@ -1,0 +1,37 @@
+<div class="wish-card">
+  <div class="wish-card__poster">
+    <img [src]="getPosterUrl()" [alt]="movieWishObj()?.title" />
+    <div class="wish-card__overlay">
+      <div class="wish-card__overlay-content">
+        <h2 class="wish-card__title">{{ movieWishObj()?.title }}</h2>
+
+        @if (movieWishObj()?.tagline) {
+        <p class="wish-card__tagline">
+          “<i>{{ movieWishObj()?.tagline }}</i>”
+        </p>
+        }
+
+        <div class="wish-card__meta">
+          <span><b>Release:</b> {{ movieWishObj()?.release_date }}</span><br />
+          <span><b>Runtime:</b> {{ movieWishObj()?.runtime }} min</span><br />
+          <span><b>Status:</b> {{ movieWishObj()?.status }}</span>
+        </div>
+
+        <p class="wish-card__overview">
+          {{ movieWishObj()?.overview }}
+        </p>
+      </div>
+
+      <div class="wish-card__footer">
+        <div class="wish-card__rating">
+          ⭐ {{ movieWishObj()?.vote_average }}/10
+        </div>
+        <div class="wish-card__btns">
+          <button class="wish-card__details-btn" (click)="viewMovieDetails()">
+            <i class="pi pi-info-circle"></i> View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="wish">
+    <div class="wish__container">
+        @if (!userObjWish() || (userObjWish()?.movies?.length === 0 && userObjWish()?.tvShows?.length === 0)) {
+        <div class="wish__empty">
+            <h2>Your wishlist is empty!</h2>
+            <p>Add movies and TV shows to your wishlist to see them here.</p>
+            <button class="wish__home-btn" (click)="goHome()">
+                Back to Home
+            </button>
+        </div>
+        } @else {
+        <div class="wish__cards">
+            @if (userObjWish()?.movies?.length !== 0) {
+            <h3>Movies...</h3>
+            <div class="wish__movies-cards">
+                @for (movie of userObjWish()?.movies; track movie.id) {
+                <div class="wish__movies-card">
+                    <button class="wish__wishlist-btn" (click)="toggleWishlist($event, movie, 'movie')">
+                        <i class="pi pi-heart-fill text-red-500"></i>
+                    </button>
+                    <app-wish-card-movie [movieWishObj]="movie"></app-wish-card-movie>
+                </div>
+                }
+            </div>
+            }
+            @if (userObjWish()?.tvShows?.length !== 0) {
+            <h3>TV Shows...</h3>
+            <div class="wish__shows-cards">
+                @for (show of userObjWish()?.tvShows; track show.id) {
+                <div class="wish__shows-card">
+                    <button class="wish__wishlist-btn" (click)="toggleWishlist($event, show, 'tv')">
+                        <i class="pi pi-heart-fill text-red-500"></i>
+                    </button>
+                    <app-wish-card-shows [showWishObj]="show"></app-wish-card-shows>
+                </div>
+                }
+            </div>
+            }
+        </div>
+
+        }
+    </div>
+    <div class="card flex justify-center gap-2 text-2xl toast">
+        <p-toast />
+    </div>
+</div>

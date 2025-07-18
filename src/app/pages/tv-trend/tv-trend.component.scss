@@ -1,0 +1,62 @@
+:host {
+    .show__header {
+        width: 100%;
+        padding-block: 1rem;
+
+        h2 {
+            transition: 0.3s ease-in-out;
+            text-align: center;
+            font-size: 3rem;
+            color: var(--p-slate-700);
+
+
+            html.my-add-dark & {
+                color: var(--p-zinc-400);
+            }
+        }
+    }
+
+    .show__header:hover h2 {
+        color: var(--p-slate-900);
+
+        html.my-add-dark & {
+            color: var(--p-zinc-200);
+        }
+    }
+
+
+    .show__container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .show__card {
+        width: 20%;
+    }
+
+    @media (max-width: 576px) {
+        .show__card {
+            width: 100%;
+        }
+    }
+
+    button {
+        background: 0;
+        border: 0;
+    }
+}
+
+:host ::ng-deep .p-paginator .p-paginator-page:hover,
+:host ::ng-deep .p-paginator .p-paginator-prev:hover,
+:host ::ng-deep .p-paginator .p-paginator-next:hover {
+    background: var(--p-primary-400);
+    color: var(--p-primary-100);
+}
+
+
+@media (max-width: 760px) {
+    .show__card  {
+        display: flex;
+        justify-content: center;
+    }
+}

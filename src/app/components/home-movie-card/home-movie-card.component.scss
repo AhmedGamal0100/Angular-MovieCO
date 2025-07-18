@@ -1,0 +1,17 @@
+.url {
+  border-radius: 20px;
+  background-color: #000;
+}
+
+.url:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.trailer-container {
+  padding: 1rem;
+}
+
+iframe{
+  width: 100%;
+}
