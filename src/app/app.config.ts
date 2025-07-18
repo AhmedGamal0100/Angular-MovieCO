@@ -5,7 +5,7 @@ import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { definePreset } from '@primeng/themes';
-import Aura from '@primeng/themes/aura';
+import Lara from '@primeng/themes/aura';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: definePreset(Aura, {
+        preset: definePreset(Lara, {
           semantic: {
             colorScheme: {
               light: {
@@ -47,13 +47,12 @@ export const appConfig: ApplicationConfig = {
                   hoverColor: '{slate.900}',
                   activeColor: '{slate.100}',
                 },
-                options: {
-                  darkModeSelector: '.my-add-dark'
-                },
               }
             },
-          }
-        })
+          },
+        }), options: {
+          darkModeSelector: '.my-add-dark'
+        },
         // preset: definePreset(Aura, {
         //   semantic: {
         //     colorScheme: {
