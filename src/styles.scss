@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
-@import 'primeflex/primeflex.scss';
+@use 'primeflex/primeflex.scss' as *;
+@import "primeng/resources/themes/lara-light-blue/theme";
 
 @font-face {
     font-family: 'Roboto Condensed';
@@ -149,28 +150,4 @@ a {
 
 button {
     cursor: pointer;
-}
-
-@media (max-width: 1440px) {
-    body {
-        // padding: 0 1rem;
-    }
-}
-
-@media (max-width: 992px) {
-        body {
-        // padding: 0 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-        body {
-        // padding: 0 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-        body {
-        // padding: 0 1rem;
-    }
 }
