@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MoviesApp": {
+    "lab2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,11 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            
-            "outputPath": {
-              "base": "docs",
-              "browser": ""
-            },
+            "outputPath": "dist/lab2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -45,13 +41,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1000kB",
-                  "maximumError": "2MB"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "5kB",
-                  "maximumError": "10kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -68,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "MoviesApp:build:production"
+              "buildTarget": "lab2:build:production"
             },
             "development": {
-              "buildTarget": "MoviesApp:build:development"
+              "buildTarget": "lab2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
