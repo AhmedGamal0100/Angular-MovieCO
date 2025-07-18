@@ -5,24 +5,18 @@ A modern, responsive movie discovery application built with Angular 19, featurin
 ## 📋 Table of Contents
 
 - [Features](#-features)
-- [Technologies Used](#-technologies-used)
 - [Project Structure](#-project-structure)
 - [Installation](#-installation)
 - [Development](#-development)
-- [Build](#-build)
-- [Testing](#-testing)
 - [API Integration](#-api-integration)
 - [Architecture](#-architecture)
 - [Components](#-components)
 - [Services](#-services)
 - [State Management](#-state-management)
-- [Routing](#-routing)
 - [Styling](#-styling)
 - [Authentication](#-authentication)
-- [Guards](#-guards)
 - [Directives](#-directives)
 - [Interfaces](#-interfaces)
-- [Environment Configuration](#-environment-configuration)
 
 ## ✨ Features
 
@@ -187,8 +181,6 @@ The build output is configured to be in the `docs/` directory for GitHub Pages d
 - **Optimization**: Enabled for production
 - **Source Maps**: Disabled for production
 - **Bundle Analysis**: Available in development mode
-
-## 🧪 Testing
 
 ### Running Tests
 ```bash
