@@ -1,7 +1,7 @@
 import { definePreset } from '@primeng/themes';
-import Lara from '@primeng/themes/Lara';
+import Aura from '@primeng/themes/Lara';
 
-export const MyPreset = definePreset(Lara, {
+export const MyPreset = definePreset(Aura, {
     semantic: {
         colorScheme: {
             light: {
